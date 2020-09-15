@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="14.0" layoutY="21.0" prefHeight="23.0" prefWidth="509.0" text="Fly-By-Wire Sim A320 Neo Installer for Microsoft Flight Simulator" />
+            <Label layoutX="14.0" layoutY="369.0" text="1.0.0">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+            </Label>
+            <ProgressBar id="progressBar" fx:id="progressBar" layoutX="14.0" layoutY="351.0" prefHeight="18.0" prefWidth="573.0" progress="0.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="355.0" />
+            <Button id="installButton" fx:id="installButton" disable="true" layoutX="510.0" layoutY="318.0" mnemonicParsing="false" onAction="#installPressed" text="Install" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="318.0" />
+            <GridPane layoutX="14.0" layoutY="75.0" prefHeight="154.0" prefWidth="357.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.0" minWidth="10.0" prefWidth="187.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="51.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="158.0" text="Install Branch" />
+                  <ChoiceBox fx:id="availBranchesCheckBox" prefHeight="35.0" prefWidth="177.0" GridPane.columnIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="158.0" text="Installation Path" GridPane.rowIndex="2" />
+                  <TextField fx:id="installPathField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="browseDirectory" mnemonicParsing="false" onAction="#browseClicked" text="Browse" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="3.0" />
+                     </GridPane.margin></Button>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
