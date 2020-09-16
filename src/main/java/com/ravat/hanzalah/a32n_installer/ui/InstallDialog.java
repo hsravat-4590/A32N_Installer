@@ -26,7 +26,7 @@ public class InstallDialog {
     @FXML private ProgressBar progressLine;
     @FXML private TextField directoryField;
     @FXML private Label logLabel;
-    private Stage stage;
+    private final Stage stage;
     private Scene scene;
     private GithubRelease release;
 

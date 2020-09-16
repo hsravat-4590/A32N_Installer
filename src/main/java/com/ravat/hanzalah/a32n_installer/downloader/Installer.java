@@ -4,5 +4,5 @@ import java.io.IOException;
 
 public interface Installer {
 
-    public boolean install() throws IOException;
+    boolean install() throws IOException;
 }

@@ -16,10 +16,10 @@ public class FileDownloader implements Runnable {
 
 
     private static final String TAG = "FILE_DOWNLOADER";
-    private Thread mThread;
+    private final Thread mThread;
     private final String URL,destination;
     private boolean isComplete;
-    private List<TaskCompleteListener> listenerList;
+    private final List<TaskCompleteListener> listenerList;
 
     public FileDownloader(String destination, String URL){
         this.URL = URL;

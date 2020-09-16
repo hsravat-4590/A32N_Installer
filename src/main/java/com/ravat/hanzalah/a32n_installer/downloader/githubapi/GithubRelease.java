@@ -18,9 +18,9 @@ import com.ravat.hanzalah.a32n_installer.downloader.FileDownloader;
  * Downloads release artifacts off github using Github API
  */
 public class GithubRelease extends Downloader implements FileDownloader.TaskCompleteListener {
-    private String primitiveResponse;
+    private final String primitiveResponse;
     private String workingPath;
-    private APIResponse response;
+    private final APIResponse response;
     private  boolean isComplete;
     private boolean status;
     private FileDownloader downloader;
@@ -36,7 +36,7 @@ public class GithubRelease extends Downloader implements FileDownloader.TaskComp
                 )
         );
         String apiOutput;
-        String JSON = new String();
+        String JSON = "";
         while ((apiOutput = in.readLine()) != null)
             JSON = JSON + apiOutput;
         in.close();

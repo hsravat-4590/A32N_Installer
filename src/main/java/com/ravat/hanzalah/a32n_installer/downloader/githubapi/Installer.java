@@ -9,7 +9,7 @@ import java.io.IOException;
  */
 public class Installer extends ZipInstaller {
 
-    private APIResponse apiResponse;
+    private final APIResponse apiResponse;
     public Installer(String zipPath,String communityPath, APIResponse apiResponse){
         super(zipPath,communityPath);
         this.apiResponse = apiResponse;

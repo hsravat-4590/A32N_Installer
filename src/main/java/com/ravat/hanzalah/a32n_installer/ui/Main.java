@@ -25,7 +25,7 @@ public class Main extends Application{
             final FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/layout/main.fxml"));
             loader.setController(new InstallDialog(stage));
-            Parent content = (Parent) loader.load();
+            Parent content = loader.load();
             stage.setResizable(false);
             Scene scene = new Scene(content);
             stage.setScene(scene);

@@ -15,7 +15,7 @@ public class LaunchController {
     @FXML private TextField installPathField;
     @FXML private Button browseDirectory,installButton;
     @FXML private ProgressBar progressBar;
-    private Stage stage;
+    private final Stage stage;
 
     public LaunchController(Stage stage){this.stage = stage;}
 
