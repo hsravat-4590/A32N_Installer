@@ -25,7 +25,7 @@ public class InstallDialog {
     @FXML private Button installButton,browseButton;
     @FXML private ProgressBar progressLine;
     @FXML private TextField directoryField;
-    @FXML private Label logLabel;
+    @FXML private Label logLabel, versionLabel;
     private final Stage stage;
     private Scene scene;
     private GithubRelease release;
@@ -41,6 +41,12 @@ public class InstallDialog {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        try {
+            GithubRelease release = new GithubRelease();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
     public void initialize(){
         instance = this;
@@ -56,12 +62,12 @@ public class InstallDialog {
             browseButton.setDisable(true);
         }
             progressLine.setProgress(0);
+        versionLabel.setText("To be installed: " + release.getAPIResponse().tag_name);
     }
 
     @FXML
     public void installClicked(){
         try {
-            GithubRelease release = new GithubRelease();
             logLabel.setText("Starting Installation");
             logLabel.setText("Downloading");
             progressLine.setProgress(-1);
