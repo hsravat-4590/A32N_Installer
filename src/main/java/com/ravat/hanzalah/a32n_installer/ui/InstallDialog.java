@@ -29,6 +29,9 @@ public class InstallDialog {
     private final Stage stage;
     private Scene scene;
     private GithubRelease release;
+    private static InstallDialog instance;
+
+    public static InstallDialog getInstance(){return instance;}
 
     public InstallDialog(Stage stage){
         this.stage = stage;
@@ -38,9 +41,9 @@ public class InstallDialog {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
     public void initialize(){
+        instance = this;
         scene = stage.getScene();
         String communityPath = DirectoryDetect.detectCommunityDirectory();
         if(communityPath == null){
@@ -67,7 +70,7 @@ public class InstallDialog {
             do{
                 System.out.println(timer++);
                 Thread.sleep(10); //Sleep the thread for 10millis to prevent it from hanging the UI
-            }while (release.isComplete() == false);
+            } while (release.isComplete() == false);
                 logLabel.setText("Complete");
                 System.out.println("Download is complete YAY");
                 System.out.println("Timer: " + timer);
@@ -80,6 +83,13 @@ public class InstallDialog {
         }
     }
 
+    /**
+     * Allows external classes to set text
+     * @param text
+     */
+    public void setText(String text){
+        logLabel.setText(text);
+    }
     @FXML
     public void browseClicked(){
         Stage chooserStage = new Stage();

@@ -1,6 +1,7 @@
 package com.ravat.hanzalah.a32n_installer.downloader;
 
 import com.ravat.hanzalah.a32n_installer.fs.DirectoryDetect;
+import com.ravat.hanzalah.a32n_installer.ui.InstallDialog;
 
 import java.io.*;
 import java.util.Enumeration;
@@ -57,9 +58,10 @@ public class ZipInstaller implements Installer {
                 String name = entry.getName();
                 long size = entry.getSize();
                 long compressedSize = entry.getCompressedSize();
-                System.out.printf("name: %-20s | size: %6d | compressed size: %6d\n",
+                String out = String.format("name: %-20s | size: %6d | compressed size: %6d\n",
                         name, size, compressedSize);
-
+                if(InstallDialog.getInstance() != null)
+                    InstallDialog.getInstance().setText(out);
                 File file = new File(communityPath.concat(name));
                 if(name.endsWith("/")){
                     file.mkdirs();
